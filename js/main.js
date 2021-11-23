@@ -4,12 +4,12 @@ Author: Ingrid Kuhn
 Author URI: http://themeforest.net/user/ingridk
 */
 jQuery(function ($) {
-	
+
 
    // Window load function
 
-    $(window).load(function () {  
-	
+    $(window).load(function () {
+
 	//Open street  Map
 	var mapcanvas = document.getElementById("map-canvas");
 	if(mapcanvas){
@@ -29,11 +29,11 @@ jQuery(function ($) {
 		iconAnchor:   [40, 94] // point of the icon which will correspond to marker's location
 		});
 
-	var marker = L.marker(coord, {icon: customIcon}).addTo(map); 
+	var marker = L.marker(coord, {icon: customIcon}).addTo(map);
 
-    }	
+    }
 
-        // Page Preloader 	
+        // Page Preloader
 
         $("#preloader").fadeOut("slow");
 
@@ -46,10 +46,10 @@ jQuery(function ($) {
                 //hack - forces mobile version to be off
                 return false;
             }
-		});		
+		});
 
-        //Portfolio Isotope 
-		
+        //Portfolio Isotope
+
         var $container = $('#lightbox');
         $container.isotope({
             filter: '*',
@@ -59,13 +59,13 @@ jQuery(function ($) {
                 queue: false
             }
         });
-		
+
 		$(window).smartresize(function(){
 			$container.isotope({
 			columnWidth: '.col-sm-3'
 			});
 		});
-		
+
 
 		//Portfolio Nav Filter
 
@@ -84,15 +84,15 @@ jQuery(function ($) {
             });
             return false;
         });
-		
+
     });
 
 
     $(document).ready(function () {
         "use strict"
-				
-		
-        //Scrolling feature 
+
+
+        //Scrolling feature
 
         $('.page-scroll a').on('click', function (event) {
             var $anchor = $(this);
@@ -112,10 +112,10 @@ jQuery(function ($) {
             } else {
                 $('.back-to-top').fadeOut(400);
             }
-        });		
-     
+        });
+
         //Testimonials Carousel
-		
+
         $("#owl-testimonials").owlCarousel({
             dots: true,
             loop: true,
@@ -127,21 +127,21 @@ jQuery(function ($) {
             ],
 			 responsive: {
                 1: {items: 1,},
-                991: {items: 2,},
+                991: {items: 1,},
             }
         });
 
         //About Carousel
-		
-        $("#owl-about").owlCarousel({
-            items: 1,
-            dots: true,
-            loop: true,
-            autoplay: false,
-        });
+
+        //$("#owl-about").owlCarousel({
+        //    items: 1,
+        //    dots: true,
+        //    loop: true,
+        //    autoplay: false,
+        //});
 
         // Blog Carousel
-		
+
         $("#owl-blog").owlCarousel({
             items: 3,
             dots: true,
@@ -160,14 +160,14 @@ jQuery(function ($) {
             }
         });
 
-        //Team Carousel	
-		
+        //Team Carousel
+
         $("#owl-team").owlCarousel({
-            items: 4,
+            items: 3,
             dots: true,
             loop: true,
             margin: 20,
-            autoplay: false,
+            autoplay: true,
             nav: true,
             navText: [
                 "<i class='flaticon-arrows-1'></i>",
@@ -175,9 +175,30 @@ jQuery(function ($) {
             ],
              responsive: {
                 1: {items: 1,},
-				550:{items: 2,},
+								550:{items: 2,},
                 1000: {items: 3,},
-                1200: {items: 4,}
+                1200: {items: 3,}
+            }
+        });
+
+        //Service Carousel
+
+        $("#owl-service").owlCarousel({
+            items: 3,
+            dots: true,
+            loop: true,
+            margin: 20,
+            autoplay: true,
+            nav: true,
+            navText: [
+                "<i class='flaticon-arrows-1'></i>",
+                "<i class='flaticon-arrows'></i>"
+            ],
+             responsive: {
+                1: {items: 1,},
+								550:{items: 2,},
+                1000: {items: 3,},
+                1200: {items: 3,}
             }
         });
 
@@ -195,18 +216,22 @@ jQuery(function ($) {
             theme: 'light_square',
             /* light_rounded / dark_rounded / light_square / dark_square / facebook */
         });
-		
-		
-		
+
+
+
     }); // end document ready
+
 
 
     //On Click  function
 	$(document).on('click',function(){
-		
+
 			//Navbar toggle
 			$('.navbar .collapse').collapse('hide');
-	})		 
-	 	
-   
+      var lazyLoadInstance = new LazyLoad({
+          // Your custom settings go here
+        });
+	})
+
+
 });
